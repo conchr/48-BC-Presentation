@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Η Μάχη των Φαρσάλων (48 π.Χ.)</title>
+    <style>
+        /* Βασικά στυλ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Στυλ για τις διαφάνειες */
+        .slide {
+            display: none;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Κεφαλίδα */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: #fdbb2d;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 25px 0 15px;
+            color: #1a2a6c;
+            border-bottom: 2px solid #b21f1f;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 20px 0 10px;
+            color: #b21f1f;
+        }
+
+        /* Πίνακες */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #1a2a6c;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e9e9e9;
+        }
+
+        /* Λίστες */
+        ul, ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Εικόνες */
+        .image-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .battle-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 3px solid #1a2a6c;
+        }
+
+        /* Πλοήγηση */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .nav-btn {
+            background: #1a2a6c;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-btn:hover {
+            background: #b21f1f;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Πρόοδος */
+        .progress-container {
+            width: 100%;
+            height: 10px;
+            background: #ddd;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #1a2a6c, #b21f1f);
+            border-radius: 5px;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        /* Στοιχεία ειδικού σχεδιασμού */
+        .highlight {
+            background: linear-gradient(120deg, #fdbb2d 0%, #fdbb2d 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 90%;
+        }
+
+        .quote {
+            font-style: italic;
+            border-left: 4px solid #b21f1f;
+            padding-left: 20px;
+            margin: 20px 0;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 100%;
+            margin: 30px 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #1a2a6c;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #b21f1f;
+            border: 4px solid #1a2a6c;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+
+        /* Ανταπόκριση σε κινητές συσκευές */
+        @media (max-width: 768px) {
+            .slide {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .timeline-item:nth-child(odd)::after,
+            .timeline-item:nth-child(even)::after {
+                left: 21px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Η Μάχη των Φαρσάλων (48 π.Χ.)</h1>
+            <p>Η αναμέτρηση που άλλαξε την ιστορία της Ρώμης</p>
+        </header>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- Διαφάνεια 1: Τίτλος -->
+        <div class="slide active" id="slide1">
+            <h2>Η Μάχη που Έκρινε τη Μοίρα της Ρώμης</h2>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/800x400/1a2a6c/ffffff?text=Μάχη+των+Φαρσάλων" alt="Μάχη των Φαρσάλων" class="battle-image">
+            </div>
+            <p>Μια αποφασιστική σύγκρουση που τερμάτισε τη Δημοκρατία και άνοιξε τον δρόμο για τη Ρωμαϊκή Αυτοκρατορία.</p>
+            <p class="quote">"Στα Φάρσαλα, η Δημοκρατία πέθανε πρακτικά. Από εκείνη τη μέρα, η Ρώμη θα κυβερνιόταν από αυτοκράτορες."</p>
+        </div>
+
+        <!-- Διαφάνεια 2: Πολιτικό Σκηνικό -->
+        <div class="slide" id="slide2">
+            <h2>Το Πολιτικό Σκηνικό – Πώς Φτάσαμε στον Εμφύλιο</h2>
+            <h3>Η Πρώτη Τριανδρία: Η Εύθραυστη Ισορροπία</h3>
+            <ul>
+                <li><span class="highlight">Τι ήταν:</span> Μια μυστική συμφωνία συνεργασίας μεταξύ τριών ισχυρών Ρωμαίων</li>
+                <li><span class="highlight">Οι ηγέτες:</span>
+                    <ul>
+                        <li><strong>Ιούλιος Καίσαρας</strong> (εκπρόσωπος του λαού - <em>Populares</em>)</li>
+                        <li><strong>Γναίος Πομπήιος</strong> (ο "Μέγας" στρατηγός)</li>
+                        <li><strong>Μάρκος Λικίνιος Κράσσος</strong> (ο πλουσιότερος Ρωμαίος)</li>
+                    </ul>
+                </li>
+                <li><span class="highlight">Η Κρίση:</span> Ο θάνατος του <strong>Κράσσου</strong> το 53 π.Χ. διαλύει την τριανδρία. Χωρίς αυτόν να ισορροπεί, ο Καίσαρας και ο Πομπήιος βρίσκονται σε άμεση σύγκρουση.</li>
+            </ul>
+            
+            <h3>Γιατί Δεν Μπορούσε πια να Λειτουργήσει η Δημοκρατία;</h3>
+            <p>Η Ρωμαϊκή Σύγκλητος δεν μπορούσε πλέον να ελέγξει τους στρατηγούς που διέθεταν πιστά στρατεύματα. Οι λεγεώνες ήταν πιστές <strong>στον στρατηγό τους</strong>, όχι στη Ρώμη. Η Δημοκρατία είχε ήδη "πεθάνει" από within. Η μάχη θα την κατέρριπτε μόνο επισημως.</p>
+        </div>
+
+        <!-- Διαφάνεια 3: Το Ανθρωποκύνηγτο -->
+        <div class="slide" id="slide3">
+            <h2>Το Ανθρωποκύνηγτο – Από την Ιταλία στην Ελλάδα</h2>
+            
+            <h3>Η Πρωταρχική Απόφαση: Ο Καίσαρας Διασχίζει τον Ρουβίκωνα</h3>
+            <ul>
+                <li>Το 49 π.Χ., ο Καίσαρας, αρνούμενος να διαλύσει το στρατό του, περνάει με τη Λεγεώνα XIII τον ποταμό Ρουβίκωνα.</li>
+                <li>Η φράση "<span class="highlight">ο κύβος ερρίφθη</span>" ("alea iacta est") συμβολίζει τη χωρίς επιστροφή απόφαση για εμφύλιο πόλεμο.</li>
+            </ul>
+            
+            <h3>Η Παράδοση της Ρώμης: Ο Πομπήιος Υποχωρεί</h3>
+            <ul>
+                <li>Ο Πομπήιος, αν και ισχυρός, δεν εμπιστεύεται πλήρως τα στρατεύματά του στην Ιταλία.</li>
+                <li>Παίρνει μια στρατηγική απόφαση: <strong>Εγκαταλείπει την Ιταλία</strong> και αποσύρεται στην Ελλάδα για να μαζέψει έναν τεράστιο νέο στρατό.</li>
+                <li><span class="highlight">Σημασία:</span> Η φυγή του παραδίδει ουσιαστικά το πολιτικό κέντρο (Ρώμη) στον Καίσαρα. Ο εμφύλιος έχει πλέον δύο κέντρα: Δύση (Καίσαρας) vs Ανατολή (Πομπήιος).</li>
+            </ul>
+        </div>
+
+        <!-- Διαφάνεια 4: Το Θέατρο της Μάχης -->
+        <div class="slide" id="slide4">
+            <h2>Το Θέατρο της Μάχης – Γιατί τα Φάρσαλα;</h2>
+            
+            <div class="image-container">
+                <img src="https://via.placeholder.com/800x400/1a2a6c/ffffff?text=Θεσσαλική+Πεδιάδα" alt="Θεσσαλική Πεδιάδα" class="battle-image">
+            </div>
+            
+            <p>Ο Πομπήιος συγκεντρώνει τον στρατό του στην <span class="highlight">πεδιάδα των Φαρσάλων</span> στη Θεσσαλία. Η επιλογή αυτή δεν είναι τυχαία:</p>
+            
+            <ul>
+                <li><span class="highlight">Ευρύχωρη Πεδιάδα:</span> Επιτρέπει στον αριθμητικά υπέρτερο στρατό του Πομπήιου (ειδικά το ιππικό) να κινηθεί και να αναπτυχθεί ελεύθερα.</li>
+                <li><span class="highlight">Γεωστρατηγική Θέση:</span> Η Θεσσαλία ήταν πάντα σταυροδρόμι μεταξύ Δύσης και Ανατολής.</li>
+            </ul>
+            
+            <h3>Ο Ποταμός Ενιπέας: Ο Αόρατος Ηρωας</h3>
+            <ul>
+                <li>Η ακριβής θέση της μάχης αμφισβητείται, αλλά πιστεύεται ότι έγινε βόρεια του ποταμού <span class="highlight">Ενιπέα</span>.</li>
+                <li>Ο ποταμός λειτούργησε ως <span class="highlight">φυσικό όριο</span>, προστατεύοντας την αριστερή πτέρυγα του Καίσαρα και του επιτρέποντας να επικεντρωθεί όλη του η προσοχή στη δεξιά πτέρυγα, όπου απειλούσε το ιππικό του Πομπήιου.</li>
+            </ul>
+        </div>
+
+        <!-- Διαφάνεια 5: Οι Δυνάμεις Παρατάσσονται -->
+        <div class="slide" id="slide5">
+            <h2>Οι Δυνάμεις Παρατάσσονται</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Στρατός</th>
+                        <th>Διοικητής</th>
+                        <th>Πεζικό</th>
+                        <th>Ιππικό</th>
+                        <th>Πλεονεκτήματα</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Populares</strong></td>
+                        <td><strong>Ιούλιος Καίσαρας</strong></td>
+                        <td>22,000 - 25,000</td>
+                        <td>~1,000</td>
+                        <td><span class="highlight">Βετεράνοι, Υψηλή Πειθαρχία</span>, Εμπειρία</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Optimates</strong></td>
+                        <td><strong>Πομπήιος ο Μέγας</strong></td>
+                        <td>~45,000</td>
+                        <td>7,000 - 8,000</td>
+                        <td><span class="highlight">Αριθμητική Υπεροχή</span>, Ιππικό</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Το Σχέδιο του Πομπήιου: Το Σφυροκόπημα</h3>
+            <ol>
+                <li>Το τεράστιο ιππικό του να συντρίψει το μικρό ιππικό του Καίσαρα.</li>
+                <li>Να πλευροκοπήσει (υπερφαλαγγίσει) τις λεγεώνες του Καίσαρα.</li>
+                <li>Να τις επιτεθεί από τα νώτα, οδηγώντας σε πανικό και ολοκληρωτική ήττα.</li>
+            </ol>
+            
+            <h3>Η Γενιά του Καίσαρα: Η Τέταρτη Γραμμή</h3>
+            <p>Ο Καίσαρας καταλαβαίνει το σχέδιο. Η απάντησή του είναι επαναστατική:</p>
+            <ul>
+                <li><span class="highlight">Ανασύνταξη:</span> "Λεπταίνει" την τρίτη γραμμή του και δημιουργεί μια <span class="highlight">κρυφή τέταρτη γραμμή</span> από ελίτ βετεράνους, τοποθετημένη πίσω από το ιππικό του.</li>
+                <li><span class="highlight">Εντολή:</span> Να μην επιτεθούν στα άλογα, αλλά <span class="highlight">στους ίδιους τους ιππείς</span>. Μια τρομακτική και απρόσμενη τακτική για την εποχή.</li>
+            </ul>
+        </div>
+
+        <!-- Διαφάνεια 6: Η Εξέλιξη της Μάχης -->
+        <div class="slide" id="slide6">
+            <h2>Η Εξέλιξη της Μάχης: Το Σημείο Καμπής</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Φάση 1: Έναρξη</h3>
+                    <p><strong>Επίθεση Ιππικού Πομπήιου:</strong> Το ιππικό του Πομπήιου εξαπολύει επίθεση για να πλευροκοπήσει τον Καίσαρα.</p>
+                    <p><strong>Επίθεση Πεζικού Καίσαρα:</strong> Οι βετεράνοι του Καίσαρα επιτίθενται.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Φάση 2: Σημείο Καμπής</h3>
+                    <p><strong>Εμπλοκή Τέταρτης Γραμμής:</strong> Η κρυφή γραμμή βετεράνων εκδηλώνεται και διαλύει το ιππικό.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Φάση 3: Κατάρρευση</h3>
+                    <p><strong>Περικύκλωση:</strong> Η τρίτη και τέταρτη γραμμή περικυκλώνουν το πεζικό του Πομπήιου.</p>
+                    <p><strong>Φυγή & Νίκη:</strong> Ο στρατός του Πομπήιου διαλύεται. Ο Καίσαρας νικά αποφασιστικά.</p>
+                </div>
+            </div>
+            
+            <div class="image-container">
+                <img src="https://via.placeholder.com/800x400/b21f1f/ffffff?text=Τακτική+της+Τέταρτης+Γραμμής" alt="Τακτική της Τέταρτης Γραμμής" class="battle-image">
+            </div>
+        </div>
+
+        <!-- Διαφάνεια 7: Οι Συνέπειες -->
+        <div class="slide" id="slide7">
+            <h2>Οι Συνέπειες – Το Τέλος μιας Εποχής</h2>
+            
+            <h3>Η Άμεση Εκβαση</h3>
+            <ul>
+                <li><span class="highlight">Συντριπτική Νίκη του Καίσαρα:</span> Ο στρατός του Πομπήιου διαλύεται πανηγυρικά.</li>
+                <li><span class="highlight">Το Τέλος του Πομπήιου:</span> Ο ηττημένος στρατηγός δραπετεύει στην Αίγυπτο, ελπίζοντας σε άσυλο. Εκεί, όμως, <span class="highlight">δολοφονείται</span> από τον τοπικό ηγεμόνα, ο οποίος θέλει να κερδίσει την εύνοια του νικητή, Καίσαρα.</li>
+            </ul>
+            
+            <h3>Η Μακροπρόθεσμη Σημασία: Το Τέλος της Δημοκρατίας</h3>
+            <ul>
+                <li>Η νίκη στα Φάρσαλα καθιστά τον Καίσαρα <span class="highlight">de facto</span> κύριο του ρωμαϊκού κόσμου.</li>
+                <li>Αποδεικνύει ότι η <span class="highlight">πραγματική εξουσία</span> βρίσκεται στο ξίφος των πιστών λεγεώνων, όχι στις ψήφους και τους νόμους της Συγκλήτου.</li>
+                <li>Τα Φάρσαλα είναι <span class="highlight">το σημείο αλλαγής</span>: Η Ρωμαϊκή Δημοκρατία πέθανε πρακτικά εκείνη την ημέρα. Ανοίγει ο δρόμος για τη δημιουργία της <span class="highlight">Αυτοκρατορίας</span>.</li>
+            </ul>
+        </div>
+
+        <!-- Διαφάνεια 8: Συμπέρασμα -->
+        <div class="slide" id="slide8">
+            <h2>Συμπέρασμα: Τα Βασικά Μαθήματα</h2>
+            
+            <div class="image-container">
+                <img src="https://via.placeholder.com/800x400/fdbb2d/333333?text=Μαθήματα+από+τη+Μάχη" alt="Μαθήματα από τη Μάχη" class="battle-image">
+            </div>
+            
+            <ul>
+                <li><span class="highlight">Ποιότητα > Ποσότητα:</span> Οι πειθαρχημένοι βετεράνοι του Καίσαρα υπερτέρησαν των αδιάφορων νεοσύλλεκτων του Πομπήιου.</li>
+                <li><span class="highlight">Τακτική Ευελιξία > Στασιμότητα:</span> Η καινοτομία της "τέταρτης γραμμής" κέρδισε την μάχη, όχι οι αριθμοί.</li>
+                <li><span class="highlight">Η Ιστορία Γίνεται από... Αποφάσεις:</span> Η απόφαση του Πομπήιου να μην επιτεθεί και η απόφαση του Καίσαρα να διασχίσει τον Ρουβίκωνα άλλαξαν τον κόσμο.</li>
+            </ul>
+            
+            <p class="quote" style="text-align: center; margin-top: 30px; font-size: 1.2rem;">
+                <strong>Η Μάχη των Φαρσάλων δεν ήταν απλώς μια μάχη. Ήταν το τέλος ενός κόσμου και η γέννηση ενός νέου.</strong>
+            </p>
+        </div>
+
+        <!-- Πλοήγηση -->
+        <div class="navigation">
+            <button class="nav-btn" id="prevBtn">Προηγούμενη</button>
+            <button class="nav-btn" id="nextBtn">Επόμενη</button>
+        </div>
+    </div>
+
+    <script>
+        // Κώδικας JavaScript για τη λειτουργία της παρουσίασης
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const progressBar = document.getElementById('progressBar');
+            
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            
+            // Ενημέρωση της προόδου
+            function updateProgress() {
+                const progress = ((currentSlide + 1) / totalSlides) * 100;
+                progressBar.style.width = `${progress}%`;
+            }
+            
+            // Εμφάνιση συγκεκριμένης διαφάνειας
+            function showSlide(index) {
+                // Απόκρυψη όλων των διαφανειών
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+                
+                // Εμφάνιση της τρέχουσας διαφάνειας
+                slides[index].classList.add('active');
+                
+                // Ενημέρωση της προόδου
+                updateProgress();
+                
+                // Απενεργοποίηση/ενεργοποίηση κουμπιών
+                prevBtn.disabled = index === 0;
+                nextBtn.disabled = index === totalSlides - 1;
+            }
+            
+            // Αρχικοποίηση
+            showSlide(currentSlide);
+            
+            // Προηγούμενη διαφάνεια
+            prevBtn.addEventListener('click', function() {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                }
+            });
+            
+            // Επόμενη διαφάνεια
+            nextBtn.addEventListener('click', function() {
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                }
+            });
+            
+            // Πλοήγηση με πλήκτρα
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') {
+                    // Αριστερό βέλος - προηγούμενη διαφάνεια
+                    if (currentSlide > 0) {
+                        currentSlide--;
+                        showSlide(currentSlide);
+                    }
+                } else if (e.key === 'ArrowRight' || e.key === ' ') {
+                    // Δεξί βέλος ή space - επόμενη διαφάνεια
+                    if (currentSlide < totalSlides - 1) {
+                        currentSlide++;
+                        showSlide(currentSlide);
+                    }
+                }
+            });
+            
+            // Προσθήκη εφέ κύλισης για ομαλή μετάβαση
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
