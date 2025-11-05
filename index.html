@@ -113,20 +113,6 @@
             margin-bottom: 8px;
         }
 
-        /* Εικόνες */
-        .image-container {
-            text-align: center;
-            margin: 25px 0;
-        }
-
-        .battle-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            border: 3px solid #1a2a6c;
-        }
-
         /* Πλοήγηση */
         .navigation {
             display: flex;
@@ -145,6 +131,9 @@
             font-weight: bold;
             transition: all 0.3s ease;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
         }
 
         .nav-btn:hover {
@@ -301,9 +290,6 @@
         <!-- Διαφάνεια 1: Τίτλος -->
         <div class="slide active" id="slide1">
             <h2>Η Μάχη που Έκρινε τη Μοίρα της Ρώμης</h2>
-            <div class="image-container">
-                <img src="https://via.placeholder.com/800x400/1a2a6c/ffffff?text=Μάχη+των+Φαρσάλων" alt="Μάχη των Φαρσάλων" class="battle-image">
-            </div>
             <p>Μια αποφασιστική σύγκρουση που τερμάτισε τη Δημοκρατία και άνοιξε τον δρόμο για τη Ρωμαϊκή Αυτοκρατορία.</p>
             <p class="quote">"Στα Φάρσαλα, η Δημοκρατία πέθανε πρακτικά. Από εκείνη τη μέρα, η Ρώμη θα κυβερνιόταν από αυτοκράτορες."</p>
         </div>
@@ -349,10 +335,6 @@
         <!-- Διαφάνεια 4: Το Θέατρο της Μάχης -->
         <div class="slide" id="slide4">
             <h2>Το Θέατρο της Μάχης – Γιατί τα Φάρσαλα;</h2>
-            
-            <div class="image-container">
-                <img src="https://via.placeholder.com/800x400/1a2a6c/ffffff?text=Θεσσαλική+Πεδιάδα" alt="Θεσσαλική Πεδιάδα" class="battle-image">
-            </div>
             
             <p>Ο Πομπήιος συγκεντρώνει τον στρατό του στην <span class="highlight">πεδιάδα των Φαρσάλων</span> στη Θεσσαλία. Η επιλογή αυτή δεν είναι τυχαία:</p>
             
@@ -435,10 +417,6 @@
                     <p><strong>Φυγή & Νίκη:</strong> Ο στρατός του Πομπήιου διαλύεται. Ο Καίσαρας νικά αποφασιστικά.</p>
                 </div>
             </div>
-            
-            <div class="image-container">
-                <img src="https://via.placeholder.com/800x400/b21f1f/ffffff?text=Τακτική+της+Τέταρτης+Γραμμής" alt="Τακτική της Τέταρτης Γραμμής" class="battle-image">
-            </div>
         </div>
 
         <!-- Διαφάνεια 7: Οι Συνέπειες -->
@@ -463,10 +441,6 @@
         <div class="slide" id="slide8">
             <h2>Συμπέρασμα: Τα Βασικά Μαθήματα</h2>
             
-            <div class="image-container">
-                <img src="https://via.placeholder.com/800x400/fdbb2d/333333?text=Μαθήματα+από+τη+Μάχη" alt="Μαθήματα από τη Μάχη" class="battle-image">
-            </div>
-            
             <ul>
                 <li><span class="highlight">Ποιότητα > Ποσότητα:</span> Οι πειθαρχημένοι βετεράνοι του Καίσαρα υπερτέρησαν των αδιάφορων νεοσύλλεκτων του Πομπήιου.</li>
                 <li><span class="highlight">Τακτική Ευελιξία > Στασιμότητα:</span> Η καινοτομία της "τέταρτης γραμμής" κέρδισε την μάχη, όχι οι αριθμοί.</li>
@@ -481,6 +455,7 @@
         <!-- Πλοήγηση -->
         <div class="navigation">
             <button class="nav-btn" id="prevBtn">Προηγούμενη</button>
+            <a href="https://conchr.github.io/Farsala-Center-Page/" class="nav-btn">Κεντρική Σελίδα</a>
             <button class="nav-btn" id="nextBtn">Επόμενη</button>
         </div>
     </div>
